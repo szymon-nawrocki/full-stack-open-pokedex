@@ -1,5 +1,4 @@
 const express = require('express')
-const res = require('express/lib/response')
 const app = express()
 
 // Heroku dynamically sets a port
@@ -9,10 +8,6 @@ app.use(express.static('dist'))
 
 app.get('/health', (req, res) => {
   res.send('ok')
-})
-
-app.get('test', () => {
-  res.send('hehe')
 })
 
 app.listen(PORT, () => {
